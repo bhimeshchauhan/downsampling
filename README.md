@@ -1,6 +1,9 @@
-# downsampling
+# DownSampling
 Downsampling an Image 
 (Matrix)
+
+#### Downsampling (or subsampling) is the process of reducing the sampling rate of a signal. 
+#### This is usually done to reduce the data rate or the size of the data. For details, please refer to this wikipedia link.
 
 # Features
 
