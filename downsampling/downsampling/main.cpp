@@ -9,7 +9,17 @@
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    int n = 2;
+    
+    // Passing n to constructMatrix function
+    constructMatrix(n);
+    
+    // Printing the desired unique matrix
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+            std::cout<<mat[i][j];
+        std::cout<<"\n";
+    }
+    return 0; 
 }
