@@ -69,7 +69,7 @@ void constructMatrix(int n)
             left++;
         }
     }
-} 
+}
 
 
 int main(int argc, const char * argv[]) {
@@ -81,8 +81,12 @@ int main(int argc, const char * argv[]) {
     // Printing the desired unique matrix
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++){
+            std::cout<<i;
+            std::cout<<j;
             std::cout<<mat[i][j];
+            std::cout<<"\n";
+        }
         std::cout<<"\n";
     }
     return 0;
