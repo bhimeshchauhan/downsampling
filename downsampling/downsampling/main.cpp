@@ -31,7 +31,45 @@ void fillRemaining(int i, int j, int n)
         mat[k][j] = x++;
 }
 
-
+// Fills entries in mat[][]
+// with the given set of rules
+void constructMatrix(int n)
+{
+    // Alternatively fill 1s starting from
+    // rightmost and leftmost columns. For
+    // example for n = 3, we get { {_ _ 1},
+    // {1 _ _} {_ 1 _}}
+    int right = n - 1, left = 0;
+    for (int i = 0; i < n; i++)
+    {
+        // If i is even, then fill
+        // next column from right
+        if (i % 2 == 0)
+        {
+            mat[i][right] = 1;
+            
+            // After filling 1, fill remaining
+            // entries of column "right"
+            fillRemaining(i, right, n);
+            
+            // Move right one column back
+            right--;
+        }
+        
+        // Fill next column from left
+        else
+        {
+            mat[i][left] = 1;
+            
+            // After filling 1, fill remaining
+            // entries of column "left"
+            fillRemaining(i, left, n);
+            
+            // Move left one column forward
+            left++;
+        }
+    }
+} 
 
 
 int main(int argc, const char * argv[]) {
