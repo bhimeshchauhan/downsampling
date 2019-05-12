@@ -8,6 +8,32 @@
 
 #include <iostream>
 
+
+const int MAX = 100;
+int mat[MAX][MAX];
+
+// Fills non-one entries in column j
+// Given that there is a "1" at
+// position mat[i][j], this function
+// fills other entries of column j.
+void fillRemaining(int i, int j, int n)
+{
+    // Initialize value to be filled
+    int x = 2;
+    
+    // Fill all values below i as 2, 3, ...p
+    for (int k = i + 1; k < n; k++)
+        mat[k][j] = x++;
+    
+    // Fill all values above i
+    // as p + 1, p + 2, .. n
+    for (int k = 0; k < i; k++)
+        mat[k][j] = x++;
+}
+
+
+
+
 int main(int argc, const char * argv[]) {
     int n = 2;
     
@@ -21,5 +47,5 @@ int main(int argc, const char * argv[]) {
             std::cout<<mat[i][j];
         std::cout<<"\n";
     }
-    return 0; 
+    return 0;
 }
